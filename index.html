@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Concert</title>
+  
+  <!-- ✅ ADD THIS: Google Fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* ✅ CHANGE THIS LINE: Replace Arial with Playfair Display */
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, #0a1f34 0%, #184d62 50%, #0a1f34 100%);
+      min-height: 100vh;
+      color: #d1b98f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #d1b98f;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .poster-container {
+      max-width: 1000px;
+      width: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 3px solid #d1b98f;
+      text-align: center;
+    }
+
+    .poster-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .poster-container {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">Starry Serenades: 112 Quintet's Musical Voyage</h1>
+
+  <div class="poster-container">
+    <img src="images/programme extend.jpg" alt="Live Music Concert Poster" />
+  </div>
+</body>
+</html>
