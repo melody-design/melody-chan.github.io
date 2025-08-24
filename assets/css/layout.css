@@ -1,0 +1,413 @@
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+@media (max-width: 768px) {
+  .header .container { padding: 1rem; }
+}
+.logo { font-size: 1.2rem; font-weight: 500; }
+
+.nav { display: flex; gap: 2rem; }
+@media (max-width: 768px) { .nav { gap: 1.5rem; } }
+
+.nav-link { position: relative; font-size: 0.95rem; }
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0; right: 0;
+  height: 1px;
+  background: #000;
+}
+
+/* Main */
+.main { min-height: 80vh; padding: 3rem 0; }
+@media (max-width: 768px) { .main { padding: 2rem 0; } }
+
+/* Footer */
+.footer {
+  border-top: 1px solid #eee;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  position: relative;
+}
+.footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Work Grid */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 2rem 0;
+}
+@media (max-width: 1024px) {
+  .work-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .work-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* About Layout */
+.about-content { max-width: 800px; margin: 0 auto; }
+.about-content section { margin-bottom: 3rem; }
+.cv-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) { .cv-list { grid-template-columns: 1fr; } }
+.cv-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Contact Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* Contact info layout */
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;            /* left labels, right content */
+  column-gap: clamp(2rem, 6vw, 5rem);
+  row-gap: clamp(2.5rem, 6vw, 5rem);         /* space between Contact and Follow rows */
+  align-items: start;
+  max-width: 1200px;                         /* optional: constrain width */
+  margin: 0 auto;                            /* center within page */
+  padding: clamp(1rem, 4vw, 2rem) 0;
+}
+
+/* Ensure each section becomes a grid row spanning both columns */
+.contact-info > section {
+  display: contents;                         /* let child elements place into columns */
+}
+
+/* Left column: headings */
+.contact-info h1,
+.contact-info h2 {
+  grid-column: 1;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  /* Large, fluid headline size similar to screenshot */
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+/* Right column: content blocks */
+.contact-details,
+.follow .social {
+  grid-column: 2;
+}
+
+/* Contact details styling */
+.contact-details {
+  display: grid;
+  gap: 0.4rem;                               /* tight vertical rhythm */
+}
+
+.contact-details p {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);     /* readable but smaller than headings */
+  line-height: 1.35;
+}
+
+.contact-details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-details a:hover,
+.contact-details a:focus {
+  text-decoration: underline;
+}
+
+/* Social list (right column for “Follow”) */
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.social li {
+  margin: 0;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.65rem;
+  padding: 0.25rem 0;
+  color: inherit;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  line-height: 1.35;
+}
+
+.social a:hover,
+.social a:focus {
+  opacity: 0.7;
+}
+
+.social img {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+
+/* Responsive: stack to one column on smaller screens */
+@media (max-width: 720px) {
+  .contact-info {
+    grid-template-columns: 1fr;              /* single column */
+    row-gap: 2rem;
+  }
+
+  .contact-info h1,
+  .contact-info h2,
+  .contact-details,
+  .follow .social {
+    grid-column: 1;
+  }
+
+  /* Slightly reduce headline size on very small screens */
+  .contact-info h1,
+  .contact-info h2 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+}
+
+
+
+/* Project Layout */
+.project-hero {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+.project-hero img,
+.project-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fixed Project Intro Alignment */
+.project-intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.project-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.project-right h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+@media (max-width: 1024px) {
+  .project-intro { grid-template-columns: 1fr; gap: 2rem; }
+  .project-right { grid-template-columns: 1fr; gap: 1rem; }
+}
+@media (max-width: 768px) {
+  .project-intro { grid-template-columns: 1fr; gap: 2rem; }
+}
+.project-tagline {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+/* Project Images */
+.project-images { margin-bottom: 4rem; }
+.project-image { margin-bottom: 2rem; }
+.project-image.full-width { width: 100%; }
+.project-image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .project-image-row { grid-template-columns: 1fr; gap: 1rem; }
+}
+.project-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.project-image a:hover img { transform: scale(1.02); }
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  border-top: 1px solid #eee;
+}
+@media (max-width: 768px) {
+  .project-nav { flex-direction: column; gap: 1rem; align-items: stretch; }
+}
+.project-nav .btn-secondary { text-align: center; }
+
+/* Base grid */
+.project-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: clamp(2rem, 6vw, 3.5rem);
+  row-gap: 1rem;                     /* tighter vertical rhythm */
+  align-items: start;
+  margin: clamp(2rem, 6vw, 4rem) 0;
+  padding: 0;                        /* remove container padding around the middle grids */
+}
+
+/* Ensure children can shrink and long words wrap */
+.project-grid-3 > * {
+  min-width: 0;
+  min-height: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  /* Remove any inner padding so the grid columns sit flush */
+  padding: 0;
+  margin-top: 0;                     /* avoid extra top margins inflating the row */
+  margin-bottom: 0;                  /* reset default block margins */
+}
+
+/* Typical text elements: set compact margins so row-gap controls spacing */
+.project-grid-3 h1,
+.project-grid-3 h2,
+.project-grid-3 h3,
+.project-grid-3 p,
+.project-grid-3 ul,
+.project-grid-3 ol {
+  margin: 0;                         /* collapse heading/paragraph margins */
+}
+
+/* Fluid media within grid */
+.project-grid-3 img,
+.project-grid-3 video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;                         /* prevent media margins from inflating rows */
+  padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-grid-3 {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 0.875rem;
+  }
+}
+
+/* Column placement utilities (optional for other items) */
+.col-left { grid-column: 1; }
+.col-middle { grid-column: 2; }
+.col-right { grid-column: 3; }
+
+/* Tagline spans the last two columns (2 and 3) */
+.tagline {
+  grid-column: 2 / 4;
+}
+
+/* Compact H2 to minimize height */
+.tagline h2 {
+  margin: 0;                         /* remove default heading margins */
+  line-height: 1.1;                  /* tighter lines */
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  /* Optional: keep to one line; comment out if wrapping is desired */
+  /* white-space: nowrap; overflow: hidden; text-overflow: ellipsis; */
+}
+
+/* Control spacing after the tagline purely via row-gap */
+.tagline + * {
+  margin-top: 0;                     /* ensure the next grid item doesn't add extra spacing */
+  padding-top: 0;
+}
+
+/* If the first paragraphs in the middle/right columns had theme margins, neutralize them */
+.col-middle > *:first-child,
+.col-right > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* If a global box-sizing isn’t already set, add this to prevent padding from affecting widths */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* Inline Video Component */
+.video {
+  margin: 2rem 0; /* consistent vertical spacing */
+}
+
+.video__figure {
+  margin: 0;
+}
+
+.video__media {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%; /* ensures no overflow */
+  border: none;
+}
+
+.video__caption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}

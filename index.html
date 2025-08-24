@@ -1,77 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Music Concert</title>
-  
-  <!-- ✅ ADD THIS: Google Fonts link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      /* ✅ CHANGE THIS LINE: Replace Arial with Playfair Display */
-      font-family: 'Playfair Display', serif;
-      background: linear-gradient(135deg, #0a1f34 0%, #184d62 50%, #0a1f34 100%);
-      min-height: 100vh;
-      color: #d1b98f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .title {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #d1b98f;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .poster-container {
-      max-width: 1000px;
-      width: 100%;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      border: 3px solid #d1b98f;
-      text-align: center;
-    }
-
-    .poster-container img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-      }
-
-      .poster-container {
-        max-width: 90%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Melody Chan</title>
+    <meta name="description" content="Portfolio of Melody Chan - Creative professional specializing in design and visual storytelling">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="/assets/img/og-image.jpg">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/utilities.css">
 </head>
 <body>
-  <h1 class="title">Starry Serenades: 112 Quintet's Musical Voyage</h1>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">Melody Chan</a>
+            <nav class="nav">
+                <a href="/" class="nav-link active">Work</a>
+                <a href="/about/" class="nav-link">About</a>
+                <a href="/contact/" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="poster-container">
-    <img src="image/programme trial.jpg" alt="Live Music Concert Poster" />
-  </div>
+    <main class="main">
+        <div class="container">
+            <div class="work-grid">
+                <article class="work-card">
+                    <a href="/work/museum-of-black-and-white/">
+                        <div class="card-image">
+                            <img src="assets/img/thumbnails/MBW_thumbnail.jpeg" alt="Museum of Black and White thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">Museum of Black and White</h2>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <a href="/work/the-unlock-festival/">
+                        <div class="card-image">
+                            <img src="/assets/img/thumbnails/unlock festival thumbnail.jpg" alt="Unlock Festival thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">The Unlock Festival</h2>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <a href="/work/bite-lite/">
+                        <div class="card-image">
+                            <img src="/assets/img/thumbnails/bite lite thumbnail.jpg" alt="Bite Lite thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">Bite Lite</h2>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <a href="/work/design-is-simple/">
+                        <div class="card-image">
+                            <img src="/assets/img/thumbnails/design is simple thumbnail.jpg" alt="Design is Simple thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">Design is Simple</h2>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <a href="/work/yoga-society/">
+                        <div class="card-image">
+                            <img src="/assets/img/thumbnails/yoga society thumbnail.jpg" alt="Yoga Society thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">Yoga Society</h2>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <a href="/work/7-mallory-street/">
+                        <div class="card-image">
+                            <img src="/assets/img/thumbnails/7 mallory st thumbnail.jpeg" alt="7 Mallory Street thumbnail" loading="lazy">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <h2 class="card-title">7 Mallory Street</h2>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Melody Chan 2025 | <a href="https://instagram.com/melody.symc">@melody.smc</a></p>
+        </div>
+        <button id="backToTop" aria-label="Back to top">&uarr;</button>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/lightbox.js"></script>
 </body>
 </html>

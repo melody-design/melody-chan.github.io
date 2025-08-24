@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Melody Chan</title>
+    <meta name="description" content="Contact Melody Chan - Get in touch for creative collaborations">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/utilities.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">Melody Chan</a>
+            <nav class="nav">
+                <a href="/" class="nav-link">Work</a>
+                <a href="/about/" class="nav-link">About</a>
+                <a href="/contact/" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <!-- Row 1: Contact -->
+                    <section class="contact-row">
+                        <div class="contact-label">
+                        <h2>Contact</h2>
+                        </div>
+                        <div class="contact-body">
+                        <div class="contact-details">
+                            <p><a href="mailto:chanmelody513@gmail.com">chanmelody513@gmail.com</a></p>
+                            <p><a href="tel:+447442586188">+44 7442 586188</a></p>
+                        </div>
+                        </div>
+                    </section>
+
+                    <!-- Row 2: Follow -->
+                    <section class="follow-row">
+                        <div class="follow-label">
+                        <h2>Follow</h2>
+                        </div>
+                        <div class="follow-body">
+                        <ul class="social">
+                            <li>
+                            <a href="https://www.linkedin.com/in/melodychan513/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                                <img src="/assets/icons/linkedin.svg" alt="" width="20" height="20">
+                                <span>LinkedIn</span>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="https://instagram.com/melody.symc" aria-label="Instagram" target="_blank" rel="noopener">
+                                <img src="/assets/icons/instagram.svg" alt="" width="20" height="20">
+                                <span>Instagram</span>
+                            </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </section>
+                    </div>
+
+
+                <div class="contact-form-wrapper">
+                    <h2>Leave a message</h2>
+                    <form id="contactForm" action="mailto:chanmelody513@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Name" required>
+                            <label for="name" class="sr-only">Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Email address" required>
+                            <label for="email" class="sr-only">Email address</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder="Message" rows="6" required></textarea>
+                            <label for="message" class="sr-only">Message</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Melody Chan 2025 | <a href="https://instagram.com/melody.symc">@melody.smc</a></p>
+        </div>
+        <button id="backToTop" aria-label="Back to top">&uarr;</button>
+    </footer>
+
+    <div id="toast" role="alert">Message ready to send 📩</div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
